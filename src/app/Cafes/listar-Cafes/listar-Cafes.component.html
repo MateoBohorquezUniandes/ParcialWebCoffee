@@ -1,0 +1,29 @@
+<div class="container">
+  <table class="table" style="width:70%">
+    <thead style="background-color: black; color: white;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Región</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cafes">
+        <th scope="row">
+          <dd>{{c.id}}</dd>
+        </th>
+        <td>
+          <dd>{{c.nombre}}</dd>
+        </td>
+        <td>
+          <dd>{{c.tipo}}</dd>
+        </td>
+        <td>
+          <dd>{{c.region}}</dd>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cafe } from './Cafe';
-import { enviroment } from 'src/enviroments/enviroment';
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CafesService {
-  private apiUrl = enviroment.CoffeeApiUrl;
+  private apiUrl: string = environment.CoffeeApiUrl;
 
   constructor(private http: HttpClient) { }
 
