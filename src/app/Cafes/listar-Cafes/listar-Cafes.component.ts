@@ -8,7 +8,8 @@ import { CafesService } from '../Cafes.service';
   styleUrls: ['./listar-Cafes.component.css']
 })
 export class ListarCafesComponent implements OnInit {
-
+  blend:number = 0;
+  origen:number = 0;
   cafes: Array<Cafe> = [];
 
   constructor(private cafesService : CafesService){}
@@ -16,7 +17,18 @@ export class ListarCafesComponent implements OnInit {
   getCafes(): void {
     this.cafesService.getCoffees().subscribe(cafes => {
       this.cafes = cafes;
+      this.getCountCoffess(cafes);
     });
+  }
+  getCountCoffess(array:Array<Cafe>): void {
+     for(let c of array){
+      if(c.tipo === "Blend"){
+        this.blend = this.blend + 1;
+      }
+      else{
+        this.origen = this.origen + 1;
+      }
+    }
   }
   ngOnInit() {
     this.getCafes();
